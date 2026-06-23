@@ -4027,3 +4027,31 @@ button {
         margin-left: 0;
     }
 }
+
+/* About reasons — fix shifted text in reason list */
+.reason-list {
+    display: block;
+    width: 100%;
+}
+
+.reason-button {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 16px;
+    padding: 22px 0;
+}
+
+.reason-button svg {
+    flex: 0 0 28px;
+    width: 28px;
+    height: 28px;
+}
+
+.reason-button span {
+    flex: 1 1 auto;
+    min-width: 0;
+    display: block;
+    text-align: left;
+    line-height: 1.25;
+}
