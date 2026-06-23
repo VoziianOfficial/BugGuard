@@ -2,6 +2,7 @@
 
 (function () {
     const config = window.SiteConfig || {};
+    const AOS_REFRESH_DELAY = 520;
 
     const qs = (selector, parent = document) => parent.querySelector(selector);
     const qsa = (selector, parent = document) => Array.from(parent.querySelectorAll(selector));
@@ -95,29 +96,45 @@
         if (!dropdown || !trigger || !panel) return;
 
         let closeTimer = null;
+        panel.setAttribute('aria-hidden', 'true');
 
         const openDropdown = () => {
             window.clearTimeout(closeTimer);
             dropdown.classList.add('is-open');
             trigger.setAttribute('aria-expanded', 'true');
+            panel.setAttribute('aria-hidden', 'false');
         };
 
-        const closeDropdown = () => {
-            closeTimer = window.setTimeout(() => {
+        const closeDropdown = (immediate = false) => {
+            const closeAction = () => {
                 dropdown.classList.remove('is-open');
                 trigger.setAttribute('aria-expanded', 'false');
-            }, 220);
+                panel.setAttribute('aria-hidden', 'true');
+            };
+
+            window.clearTimeout(closeTimer);
+
+            if (immediate) {
+                closeAction();
+                return;
+            }
+
+            closeTimer = window.setTimeout(() => {
+                closeAction();
+            }, 280);
         };
 
         dropdown.addEventListener('mouseenter', openDropdown);
         dropdown.addEventListener('mouseleave', closeDropdown);
         dropdown.addEventListener('focusin', openDropdown);
-        dropdown.addEventListener('focusout', closeDropdown);
+        dropdown.addEventListener('focusout', (event) => {
+            if (dropdown.contains(event.relatedTarget)) return;
+            closeDropdown();
+        });
 
         document.addEventListener('keydown', (event) => {
             if (event.key === 'Escape') {
-                dropdown.classList.remove('is-open');
-                trigger.setAttribute('aria-expanded', 'false');
+                closeDropdown(true);
             }
         });
     };
@@ -129,18 +146,19 @@
 
         if (!menu || !openButton || !closeButton) return;
 
+        const setMenuState = (isOpen) => {
+            menu.classList.toggle('is-open', isOpen);
+            menu.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+            openButton.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            document.body.classList.toggle('menu-open', isOpen);
+        };
+
         const openMenu = () => {
-            menu.classList.add('is-open');
-            menu.setAttribute('aria-hidden', 'false');
-            openButton.setAttribute('aria-expanded', 'true');
-            document.body.classList.add('menu-open');
+            setMenuState(true);
         };
 
         const closeMenu = () => {
-            menu.classList.remove('is-open');
-            menu.setAttribute('aria-hidden', 'true');
-            openButton.setAttribute('aria-expanded', 'false');
-            document.body.classList.remove('menu-open');
+            setMenuState(false);
         };
 
         openButton.addEventListener('click', openMenu);
@@ -190,55 +208,109 @@
         cancelButton.addEventListener('click', () => saveChoice('cancelled'));
     };
 
-    const initAccordions = () => {
-        qsa('[data-accordion]').forEach((accordion) => {
-            const items = qsa('[data-accordion-item]', accordion);
+    const refreshAOS = (delay = AOS_REFRESH_DELAY) => {
+        if (!window.AOS) return;
+        window.setTimeout(() => AOS.refresh(), delay);
+    };
 
-            items.forEach((item, index) => {
-                const button = qs('[data-accordion-button]', item);
-                const panel = qs('[data-accordion-panel]', item);
+    const initSmoothAccordions = () => {
+        const accordionGroups = qsa('[data-accordion], [data-service-accordion]');
+
+        if (!accordionGroups.length) return;
+
+        const refreshOpenPanels = () => {
+            qsa(
+                '.accordion__item.is-open [data-accordion-panel], .service-accordion__item.is-open .service-accordion__panel'
+            ).forEach((panel) => {
+                panel.style.maxHeight = `${panel.scrollHeight}px`;
+            });
+        };
+
+        accordionGroups.forEach((accordion) => {
+            const items = qsa('[data-accordion-item], .service-accordion__item', accordion);
+
+            if (!items.length) return;
+
+            const closeItem = (item) => {
+                const button = qs('[data-accordion-button], .service-accordion__button', item);
+                const panel = qs('[data-accordion-panel], .service-accordion__panel', item);
 
                 if (!button || !panel) return;
 
+                item.classList.remove('is-open');
+                button.setAttribute('aria-expanded', 'false');
+                panel.setAttribute('aria-hidden', 'true');
+                panel.style.maxHeight = '0px';
+            };
+
+            const openItem = (item) => {
+                const button = qs('[data-accordion-button], .service-accordion__button', item);
+                const panel = qs('[data-accordion-panel], .service-accordion__panel', item);
+
+                if (!button || !panel) return;
+
+                item.classList.add('is-open');
+                button.setAttribute('aria-expanded', 'true');
+                panel.setAttribute('aria-hidden', 'false');
+                panel.style.maxHeight = `${panel.scrollHeight}px`;
+            };
+
+            items.forEach((item, index) => {
+                const button = qs('[data-accordion-button], .service-accordion__button', item);
+                const panel = qs('[data-accordion-panel], .service-accordion__panel', item);
+
+                if (!button || !panel) return;
+
+                panel.hidden = false;
+                panel.style.overflow = 'hidden';
+
                 const isOpen = item.classList.contains('is-open') || index === 0;
 
-                button.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-                panel.hidden = !isOpen;
-
                 if (isOpen) {
-                    item.classList.add('is-open');
+                    openItem(item);
+                } else {
+                    closeItem(item);
                 }
 
-                button.addEventListener('click', () => {
-                    const currentlyOpen = item.classList.contains('is-open');
+                if (!button.dataset.accordionBound) {
+                    button.addEventListener('click', () => {
+                        const isCurrentlyOpen = item.classList.contains('is-open');
 
-                    items.forEach((otherItem) => {
-                        const otherButton = qs('[data-accordion-button]', otherItem);
-                        const otherPanel = qs('[data-accordion-panel]', otherItem);
+                        items.forEach((otherItem) => {
+                            if (otherItem !== item) {
+                                closeItem(otherItem);
+                            }
+                        });
 
-                        otherItem.classList.remove('is-open');
-
-                        if (otherButton) {
-                            otherButton.setAttribute('aria-expanded', 'false');
+                        if (isCurrentlyOpen) {
+                            closeItem(item);
+                        } else {
+                            openItem(item);
                         }
 
-                        if (otherPanel) {
-                            otherPanel.hidden = true;
-                        }
+                        refreshAOS();
                     });
 
-                    if (!currentlyOpen) {
-                        item.classList.add('is-open');
-                        button.setAttribute('aria-expanded', 'true');
-                        panel.hidden = false;
-                    }
+                    button.dataset.accordionBound = 'true';
+                }
+            });
 
-                    if (window.AOS) {
-                        window.setTimeout(() => AOS.refresh(), 180);
-                    }
-                });
+            qsa('img', accordion).forEach((image) => {
+                image.addEventListener('load', refreshOpenPanels);
             });
         });
+
+        let resizeFrame = null;
+
+        window.addEventListener('resize', () => {
+            if (resizeFrame) {
+                window.cancelAnimationFrame(resizeFrame);
+            }
+
+            resizeFrame = window.requestAnimationFrame(refreshOpenPanels);
+        }, { passive: true });
+
+        window.addEventListener('load', refreshOpenPanels);
     };
 
     const initRelatedServiceCards = () => {
@@ -313,12 +385,13 @@
 
         if (window.AOS) {
             AOS.init({
-                duration: 720,
+                duration: 850,
                 easing: 'ease-out-cubic',
                 once: true,
-                offset: 80,
+                offset: 70,
                 delay: 0,
-                mirror: false
+                mirror: false,
+                anchorPlacement: 'top-bottom'
             });
         }
     };
@@ -331,7 +404,7 @@
         initHeaderDropdown();
         initMobileMenu();
         initCookieBanner();
-        initAccordions();
+        initSmoothAccordions();
         initHeaderScrollState();
         initLibraries();
 
