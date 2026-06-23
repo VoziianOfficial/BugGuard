@@ -4090,7 +4090,7 @@ button {
     position: absolute;
     inset: 0;
     z-index: 1;
-    background: rgba(0, 0, 0, 0.52);
+    background: rgba(0, 0, 0, 0.62);
     pointer-events: none;
 }
 
