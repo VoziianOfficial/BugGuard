@@ -383,3 +383,53 @@
         justify-content: center;
     }
 }
+/* Legal contact card — fix shifted inner text */
+.legal-contact-card {
+    display: grid;
+    gap: 0;
+    margin-top: 22px;
+}
+
+.legal-contact-card>a,
+.legal-contact-card>span {
+    display: grid;
+    grid-template-columns: 28px minmax(0, 1fr);
+    gap: 12px;
+    align-items: center;
+    min-height: 48px;
+    padding: 12px 0;
+    color: rgba(16, 34, 27, 0.76);
+    border-bottom: 1px solid var(--color-border-light);
+    font-weight: 850;
+    overflow-wrap: anywhere;
+}
+
+.legal-contact-card>a:last-child,
+.legal-contact-card>span:last-child {
+    border-bottom: 0;
+}
+
+.legal-contact-card>a>span,
+.legal-contact-card>span>span {
+    display: block;
+    min-width: 0;
+    padding: 0;
+    border: 0;
+    color: inherit;
+    font-weight: inherit;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+}
+
+.legal-contact-card>a>svg,
+.legal-contact-card>span>svg {
+    width: 24px;
+    height: 24px;
+    color: var(--color-dark-green);
+    stroke-width: 1.7;
+    flex: 0 0 auto;
+}
+
+.legal-contact-card>a:hover {
+    color: var(--color-black);
+}
