@@ -1,0 +1,52 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="logoTitle logoDesc">
+    <title id="logoTitle">Pest Control Spray Logo</title>
+    <desc id="logoDesc">Color pest control logo with spray can, mist cloud, and warning pest control symbol.</desc>
+
+    <path d="M183 118C183 109.716 189.716 103 198 103H226C234.284 103 241 109.716 241 118V157H183V118Z"
+        fill="#0E2A22" stroke="#050706" stroke-width="12" stroke-linejoin="round" />
+
+    <path d="M155 195C155 165.729 178.729 142 208 142H216C245.271 142 269 165.729 269 195V198H155V195Z"
+        fill="#0E2A22" stroke="#050706" stroke-width="12" stroke-linejoin="round" />
+
+    <rect x="141" y="190" width="142" height="31" rx="15.5"
+        fill="#A7F56A" stroke="#050706" stroke-width="12" />
+
+    <rect x="151" y="213" width="122" height="195" rx="8"
+        fill="#0E2A22" stroke="#050706" stroke-width="12" />
+
+    <rect x="141" y="399" width="142" height="32" rx="16"
+        fill="#A7F56A" stroke="#050706" stroke-width="12" />
+
+    <circle cx="212" cy="302" r="36"
+        fill="#F5F2EA" stroke="#050706" stroke-width="12" />
+
+    <path d="M187 327L237 277"
+        stroke="#E44242" stroke-width="13" stroke-linecap="round" />
+
+    <path d="M289 155L360 121C363.5 94 395 86 411 106C424 88 457 97 463 123C486 128 500 149 495 172C510 185 508 218 486 232C491 255 470 277 445 270C432 294 397 292 389 267C367 270 350 258 347 237L289 209"
+        fill="#7EDFA1" stroke="#050706" stroke-width="12" stroke-linejoin="round" />
+
+    <path d="M289 170L366 134"
+        stroke="#050706" stroke-width="12" stroke-linecap="round" />
+
+    <path d="M289 208L366 243"
+        stroke="#050706" stroke-width="12" stroke-linecap="round" />
+
+    <path d="M330 190L410 152"
+        stroke="#071A15" stroke-width="12" stroke-linecap="round" />
+
+    <path d="M390 202L428 220"
+        stroke="#071A15" stroke-width="12" stroke-linecap="round" />
+
+    <path d="M430 148L427 174"
+        stroke="#071A15" stroke-width="12" stroke-linecap="round" />
+
+    <circle cx="212" cy="302" r="20"
+        fill="#050706" opacity="0.08" />
+
+    <path d="M171 242H253"
+        stroke="#A7F56A" stroke-width="7" stroke-linecap="round" opacity="0.7" />
+
+    <path d="M171 376H253"
+        stroke="#071A15" stroke-width="7" stroke-linecap="round" opacity="0.45" />
+</svg>

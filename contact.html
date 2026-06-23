@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit a Pest Control Request | BugGuard</title>
+
+    <meta name="description"
+        content="Describe your pest issue and start an independent provider-matching request through BugGuard.">
+    <meta name="theme-color" content="#050706">
+
+    <link rel="icon" href="assets/images/logo.svg" type="image/svg+xml">
+
+    <link rel="preconnect" href="https://unpkg.com">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+
+<body data-page="contact">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header" data-site-header>
+        <div class="site-header__shell">
+            <a class="site-logo" href="index.html" aria-label="BugGuard home">
+                <img src="assets/images/logo.svg" alt="BugGuard logo" width="66" height="66">
+                <span data-brand-name>BugGuard</span>
+            </a>
+
+            <nav class="site-nav" aria-label="Primary navigation">
+                <a class="site-nav__link" href="index.html">Home</a>
+                <a class="site-nav__link" href="about.html">About</a>
+
+                <div class="site-nav__dropdown" data-dropdown>
+                    <a class="site-nav__link site-nav__link--dropdown" href="all-services.html" data-dropdown-trigger
+                        aria-haspopup="true" aria-expanded="false">
+                        Services
+                        <i data-lucide="chevron-down" aria-hidden="true"></i>
+                    </a>
+
+                    <div class="services-dropdown" data-dropdown-panel>
+                        <div class="services-dropdown__inner" data-service-links="desktop"></div>
+                    </div>
+                </div>
+
+                <a class="site-nav__link is-active" href="contact.html">Contact</a>
+            </nav>
+
+            <div class="site-header__actions">
+                <a class="icon-action" href="tel:+18885550148" data-phone-link aria-label="Call BugGuard">
+                    <i data-lucide="phone" aria-hidden="true"></i>
+                </a>
+
+                <a class="icon-action" href="contact.html#contact-form" aria-label="Open contact form">
+                    <i data-lucide="mail" aria-hidden="true"></i>
+                </a>
+
+                <button class="menu-toggle" type="button" data-menu-toggle aria-label="Open menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+
+        <div class="mobile-menu" data-mobile-menu aria-hidden="true">
+            <div class="mobile-menu__panel">
+                <div class="mobile-menu__top">
+                    <a class="site-logo site-logo--mobile" href="index.html" aria-label="BugGuard home">
+                        <img src="assets/images/logo.svg" alt="BugGuard logo" width="58" height="58">
+                        <span data-brand-name>BugGuard</span>
+                    </a>
+
+                    <button class="mobile-menu__close" type="button" data-menu-close aria-label="Close menu">
+                        <i data-lucide="x" aria-hidden="true"></i>
+                    </button>
+                </div>
+
+                <nav class="mobile-menu__nav" aria-label="Mobile navigation">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="all-services.html">Services</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+
+                <div class="mobile-menu__services">
+                    <p>Service categories</p>
+                    <div class="mobile-menu__service-grid" data-service-links="mobile"></div>
+                </div>
+
+                <div class="mobile-menu__contact">
+                    <a href="tel:+18885550148" data-phone-link>
+                        <i data-lucide="phone" aria-hidden="true"></i>
+                        <span data-phone-text>(888) 555-0148</span>
+                    </a>
+
+                    <a href="mailto:hello@bugguard.com" data-email-link>
+                        <i data-lucide="mail" aria-hidden="true"></i>
+                        <span data-email-text>hello@bugguard.com</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- SECTION 1: CONTACT HERO -->
+        <section class="hero hero--inner" id="contact-hero" aria-labelledby="contact-hero-title">
+            <div class="hero__media" aria-hidden="true">
+                <img src="assets/images/contact/contact-hero.jpg"
+                    alt="Homeowner preparing details for a pest control provider-matching request" width="1920"
+                    height="1100">
+                <span class="photo-overlay"></span>
+            </div>
+
+            <div class="container hero__content">
+                <div class="hero__text">
+                    <p class="section-kicker section-kicker--light" data-aos="fade-down">
+                        Submit a request
+                    </p>
+
+                    <h1 id="contact-hero-title" data-aos="fade-up" data-aos-delay="80">
+                        Describe the pest issue and start provider matching.
+                    </h1>
+
+                    <p class="hero__lead" data-aos="fade-up" data-aos-delay="140">
+                        Share what you noticed, choose the closest service category, and use BugGuard to organize a
+                        provider-matching request. This is not a direct pest treatment booking.
+                    </p>
+
+                    <div class="hero__actions" data-aos="fade-up" data-aos-delay="210">
+                        <a class="btn btn--primary" href="#contact-form">
+                            Submit Request
+                            <i data-lucide="send" aria-hidden="true"></i>
+                        </a>
+
+                        <a class="btn btn--ghost" href="all-services.html">
+                            View Categories
+                            <i data-lucide="grid-2x2" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <nav class="hero-section-nav" aria-label="Contact page section navigation" data-aos="fade-left"
+                    data-aos-delay="180">
+                    <a href="#categories">Categories</a>
+                    <a href="#request-details">Request Details</a>
+                    <a href="#contact-form">Form</a>
+                    <a href="#next-steps">Next Steps</a>
+                </nav>
+            </div>
+        </section>
+
+        <!-- SECTION 2: QUICK CATEGORY CARDS -->
+        <section class="contact-categories section section--dark" id="categories" aria-label="Quick pest categories">
+            <div class="container">
+                <div class="contact-categories__grid">
+                    <a class="contact-category-card shine-surface" href="general-pest-control.html" data-aos="fade-up">
+                        <div>
+                            <h2>General Pests</h2>
+                            <p>Mixed or unclear pest signs around indoor and outdoor areas.</p>
+                        </div>
+                        <i data-lucide="bug" aria-hidden="true"></i>
+                    </a>
+
+                    <a class="contact-category-card shine-surface" href="rodent-control.html" data-aos="fade-up"
+                        data-aos-delay="70">
+                        <div>
+                            <h2>Rodents</h2>
+                            <p>Scratching, droppings, storage areas, entry points, or attic signs.</p>
+                        </div>
+                        <i data-lucide="rat" aria-hidden="true"></i>
+                    </a>
+
+                    <a class="contact-category-card shine-surface" href="ant-cockroach-control.html" data-aos="fade-up"
+                        data-aos-delay="140">
+                        <div>
+                            <h2>Ants & Cockroaches</h2>
+                            <p>Kitchen activity, pantry signs, moisture areas, cracks, or trails.</p>
+                        </div>
+                        <i data-lucide="bug" aria-hidden="true"></i>
+                    </a>
+
+                    <a class="contact-category-card shine-surface" href="spider-control.html" data-aos="fade-up"
+                        data-aos-delay="210">
+                        <div>
+                            <h2>Spiders</h2>
+                            <p>Webs, basements, garages, exterior edges, or recurring activity.</p>
+                        </div>
+                        <i data-lucide="spider" aria-hidden="true"></i>
+                    </a>
+
+                    <a class="contact-category-card shine-surface" href="wasp-hornet-nest-removal.html"
+                        data-aos="fade-up" data-aos-delay="280">
+                        <div>
+                            <h2>Wasps & Hornets</h2>
+                            <p>Visible nests, rooflines, eaves, yard activity, or stinging insects.</p>
+                        </div>
+                        <i data-lucide="shield-alert" aria-hidden="true"></i>
+                    </a>
+
+                    <a class="contact-category-card shine-surface" href="flea-control.html" data-aos="fade-up"
+                        data-aos-delay="350">
+                        <div>
+                            <h2>Fleas</h2>
+                            <p>Fabric, carpet, bedding, pet areas, recurring bites, or indoor activity.</p>
+                        </div>
+                        <i data-lucide="paw-print" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: CONTACT INTRO / WHAT TO INCLUDE -->
+        <section class="request-details section section--milk" id="request-details" aria-labelledby="request-title">
+            <div class="container request-details__grid">
+                <div class="request-details__content">
+                    <p class="section-kicker" data-aos="fade-right">Request details</p>
+
+                    <h2 id="request-title" data-aos="fade-up">
+                        Helpful details make the request easier to compare.
+                    </h2>
+
+                    <p data-aos="fade-up" data-aos-delay="80">
+                        You do not need to know the exact pest type. Start with what you noticed, where it appears, and
+                        whether the issue feels new, recurring, indoor, outdoor, or urgent.
+                    </p>
+
+                    <div class="request-details__list" data-aos="fade-up" data-aos-delay="150">
+                        <div class="request-detail-row">
+                            <i data-lucide="bug" aria-hidden="true"></i>
+                            <span>Pest type if known</span>
+                        </div>
+
+                        <div class="request-detail-row">
+                            <i data-lucide="map-pin" aria-hidden="true"></i>
+                            <span>Where you noticed activity</span>
+                        </div>
+
+                        <div class="request-detail-row">
+                            <i data-lucide="clock" aria-hidden="true"></i>
+                            <span>How long it has been happening</span>
+                        </div>
+
+                        <div class="request-detail-row">
+                            <i data-lucide="home" aria-hidden="true"></i>
+                            <span>Indoor or outdoor issue</span>
+                        </div>
+
+                        <div class="request-detail-row">
+                            <i data-lucide="siren" aria-hidden="true"></i>
+                            <span>Urgency level</span>
+                        </div>
+
+                        <div class="request-detail-row">
+                            <i data-lucide="image-plus" aria-hidden="true"></i>
+                            <span>Photos if available</span>
+                        </div>
+                    </div>
+                </div>
+
+                <figure class="request-details__photo shine-surface" data-aos="zoom-in-left">
+                    <img src="assets/images/contact/contact-pest-request.jpg"
+                        alt="Homeowner writing pest issue details for provider matching" width="920" height="780"
+                        loading="lazy">
+                    <span class="photo-overlay"></span>
+                </figure>
+            </div>
+        </section>
+
+        <!-- SECTION 4: CONTACT FORM SECTION -->
+        <section class="contact-form-section section section--deep" id="contact-form"
+            aria-labelledby="contact-form-title">
+            <div class="container contact-form-section__grid">
+                <form class="contact-form" action="contact.php" method="POST" data-contact-form data-aos="fade-right">
+                    <p class="section-kicker section-kicker--light">Provider-matching request</p>
+
+                    <h2 id="contact-form-title">
+                        Describe what you noticed.
+                    </h2>
+
+                    <p>
+                        Describe what you noticed, and BugGuard can help organize the request around relevant provider
+                        options.
+                    </p>
+
+                    <div class="form-grid">
+                        <label>
+                            <span>Name</span>
+                            <input type="text" name="name" autocomplete="name" placeholder="Your name" required>
+                        </label>
+
+                        <label>
+                            <span>Email</span>
+                            <input type="email" name="email" autocomplete="email" placeholder="you@example.com"
+                                required>
+                        </label>
+
+                        <label>
+                            <span>Phone</span>
+                            <input type="tel" name="phone" autocomplete="tel" placeholder="Your phone number" required>
+                        </label>
+
+                        <label>
+                            <span>Service type</span>
+                            <select name="service" data-service-select required>
+                                <option value="">Choose service type</option>
+                                <option value="General Pest Control">General Pest Control</option>
+                                <option value="Rodent Control">Rodent Control</option>
+                                <option value="Ant & Cockroach Control">Ant & Cockroach Control</option>
+                                <option value="Spider Control">Spider Control</option>
+                                <option value="Wasp & Hornet Nest Removal">Wasp & Hornet Nest Removal</option>
+                                <option value="Flea Control">Flea Control</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <label>
+                        <span>Message</span>
+                        <textarea name="message" rows="5"
+                            placeholder="Tell us where you noticed activity, what signs you saw, and how urgent it feels."
+                            required></textarea>
+                    </label>
+
+                    <label class="form-consent">
+                        <input type="checkbox" name="consent" required>
+                        <span>
+                            I agree to be contacted about this independent provider-matching request. I understand
+                            BugGuard does not directly perform pest control work or guarantee provider results.
+                        </span>
+                    </label>
+
+                    <button class="btn btn--primary" type="submit">
+                        Submit Request
+                        <i data-lucide="send" aria-hidden="true"></i>
+                    </button>
+
+                    <p class="form-status" data-form-status hidden></p>
+                </form>
+
+                <aside class="contact-side" data-aos="fade-left">
+                    <div class="contact-side__cards">
+                        <article class="contact-info-card shine-surface">
+                            <i data-lucide="mail" aria-hidden="true"></i>
+                            <span>Email</span>
+                            <a href="mailto:hello@bugguard.com" data-email-link data-email-text>hello@bugguard.com</a>
+                        </article>
+
+                        <article class="contact-info-card shine-surface">
+                            <i data-lucide="phone" aria-hidden="true"></i>
+                            <span>Phone</span>
+                            <a href="tel:+18885550148" data-phone-link data-phone-text>(888) 555-0148</a>
+                        </article>
+
+                        <article class="contact-info-card shine-surface">
+                            <i data-lucide="map-pin" aria-hidden="true"></i>
+                            <span>Service Area</span>
+                            <p data-company-address>USA Service Area</p>
+                        </article>
+
+                        <article class="contact-info-card shine-surface">
+                            <i data-lucide="badge-check" aria-hidden="true"></i>
+                            <span>Independent Platform</span>
+                            <p data-company-id>BG-PEST-2048</p>
+                        </article>
+                    </div>
+
+                    <div class="contact-side__photos">
+                        <figure class="shine-surface">
+                            <img src="assets/images/contact/contact-square-1.jpg"
+                                alt="Clean home area prepared for pest provider request" width="520" height="520"
+                                loading="lazy">
+                            <span class="photo-overlay"></span>
+                        </figure>
+
+                        <figure class="shine-surface">
+                            <img src="assets/images/contact/contact-square-2.jpg"
+                                alt="Pest issue detail area photographed for provider comparison" width="520"
+                                height="520" loading="lazy">
+                            <span class="photo-overlay"></span>
+                        </figure>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <!-- SECTION 5: FINAL HELP / CTA INFO -->
+        <section class="next-steps section section--milk" id="next-steps" aria-labelledby="next-steps-title">
+            <div class="container">
+                <div class="section-heading section-heading--split">
+                    <div>
+                        <p class="section-kicker" data-aos="fade-right">Next steps</p>
+                        <h2 id="next-steps-title" data-aos="fade-up">
+                            What happens after a request?
+                        </h2>
+                    </div>
+
+                    <p data-aos="fade-left">
+                        BugGuard keeps the platform role transparent. The request helps organize provider matching, but
+                        local providers are responsible for their own evaluation, pricing, availability, and service
+                        details.
+                    </p>
+                </div>
+
+                <div class="accordion" data-accordion data-aos="fade-up">
+                    <article class="accordion__item is-open" data-accordion-item>
+                        <button class="accordion__button" type="button" data-accordion-button>
+                            <span>What happens after I submit?</span>
+                            <i data-lucide="plus" aria-hidden="true"></i>
+                        </button>
+                        <div class="accordion__panel" data-accordion-panel>
+                            <p>
+                                Your details are organized around the selected service category so a provider-matching
+                                flow can continue from there. BugGuard does not directly perform pest control work.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="accordion__item" data-accordion-item>
+                        <button class="accordion__button" type="button" data-accordion-button>
+                            <span>Does BugGuard perform pest control work?</span>
+                            <i data-lucide="plus" aria-hidden="true"></i>
+                        </button>
+                        <div class="accordion__panel" data-accordion-panel>
+                            <p>
+                                No. BugGuard is an independent provider-matching platform and does not inspect, treat,
+                                exterminate, remove nests, apply chemicals, or guarantee outcomes.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="accordion__item" data-accordion-item>
+                        <button class="accordion__button" type="button" data-accordion-button>
+                            <span>Can I compare multiple options?</span>
+                            <i data-lucide="plus" aria-hidden="true"></i>
+                        </button>
+                        <div class="accordion__panel" data-accordion-panel>
+                            <p>
+                                The platform is designed to help homeowners compare local provider options and choose
+                                the fit that works for their home and situation.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="accordion__item" data-accordion-item>
+                        <button class="accordion__button" type="button" data-accordion-button>
+                            <span>What details should I include?</span>
+                            <i data-lucide="plus" aria-hidden="true"></i>
+                        </button>
+                        <div class="accordion__panel" data-accordion-panel>
+                            <p>
+                                Include where activity appears, how long it has been happening, pest type if known,
+                                indoor or outdoor location, urgency, and photos if available.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="accordion__item" data-accordion-item>
+                        <button class="accordion__button" type="button" data-accordion-button>
+                            <span>Are results guaranteed?</span>
+                            <i data-lucide="plus" aria-hidden="true"></i>
+                        </button>
+                        <div class="accordion__panel" data-accordion-panel>
+                            <p>
+                                No. BugGuard does not guarantee provider results, pricing, availability, response time,
+                                inspection outcomes, treatment success, or same-day service.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+
+                <aside class="final-cta shine-surface" aria-labelledby="contact-final-cta-title" data-aos="zoom-in">
+                    <img src="assets/images/cta/pest-control-request.jpg"
+                        alt="Homeowner starting an independent pest control provider request" width="1600" height="720"
+                        loading="lazy">
+                    <span class="photo-overlay"></span>
+
+                    <div class="final-cta__content">
+                        <p class="section-kicker section-kicker--light">Start your request</p>
+
+                        <h2 id="contact-final-cta-title">
+                            Start with the pest issue you see today.
+                        </h2>
+
+                        <p>
+                            Describe the signs, choose a category, and compare local provider options before deciding
+                            what feels right for your home.
+                        </p>
+
+                        <div class="final-cta__actions">
+                            <a class="btn btn--primary" href="#contact-form">
+                                Submit Request
+                                <i data-lucide="send" aria-hidden="true"></i>
+                            </a>
+
+                            <a class="btn btn--ghost" href="all-services.html">
+                                View Services
+                                <i data-lucide="grid-2x2" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container site-footer__grid">
+            <div class="site-footer__brand">
+                <a class="footer-logo" href="index.html" aria-label="BugGuard home">
+                    <img src="assets/images/logo.svg" alt="BugGuard logo" width="82" height="82">
+                    <span data-brand-name>BugGuard</span>
+                </a>
+
+                <p data-footer-description>
+                    BugGuard is an independent pest control provider-matching platform that helps homeowners compare
+                    local provider options for common pest issues.
+                </p>
+
+                <p class="site-footer__disclaimer" data-legal-disclaimer>
+                    BugGuard is an independent provider-matching platform. BugGuard does not directly perform pest
+                    control work, inspections, treatments, extermination, nest removal, chemical applications, repairs,
+                    or guarantee provider results.
+                </p>
+            </div>
+
+            <div class="site-footer__column">
+                <h2>Pages</h2>
+                <nav aria-label="Footer main navigation">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="all-services.html">Services</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+            </div>
+
+            <div class="site-footer__column">
+                <h2>Services</h2>
+                <nav aria-label="Footer service navigation" data-service-links="footer"></nav>
+            </div>
+
+            <div class="site-footer__column">
+                <h2>Contact</h2>
+
+                <address class="site-footer__contact">
+                    <a href="tel:+18885550148" data-phone-link>
+                        <i data-lucide="phone" aria-hidden="true"></i>
+                        <span data-phone-text>(888) 555-0148</span>
+                    </a>
+
+                    <a href="mailto:hello@bugguard.com" data-email-link>
+                        <i data-lucide="mail" aria-hidden="true"></i>
+                        <span data-email-text>hello@bugguard.com</span>
+                    </a>
+
+                    <span>
+                        <i data-lucide="map-pin" aria-hidden="true"></i>
+                        <span data-company-address>USA Service Area</span>
+                    </span>
+
+                    <span>
+                        <i data-lucide="badge-check" aria-hidden="true"></i>
+                        <span data-company-id>BG-PEST-2048</span>
+                    </span>
+                </address>
+            </div>
+        </div>
+
+        <div class="container site-footer__bottom">
+            <p>
+                © <span data-current-year></span>
+                <span data-brand-name>BugGuard</span>.
+                <span data-footer-copyright>All rights reserved.</span>
+            </p>
+
+            <nav aria-label="Legal navigation">
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-of-service.html">Terms of Service</a>
+                <a href="cookie-policy.html">Cookie Policy</a>
+            </nav>
+        </div>
+    </footer>
+
+    <div class="cookie-banner" data-cookie-banner aria-hidden="true">
+        <div class="cookie-banner__content">
+            <div>
+                <h2>Cookie notice</h2>
+                <p>
+                    BugGuard uses essential cookies and local storage to remember your cookie choice and improve basic
+                    site functionality. Review our
+                    <a href="privacy-policy.html">Privacy Policy</a>,
+                    <a href="cookie-policy.html">Cookie Policy</a>, and
+                    <a href="terms-of-service.html">Terms of Service</a>.
+                </p>
+            </div>
+
+            <div class="cookie-banner__actions">
+                <button class="btn btn--primary btn--small" type="button" data-cookie-accept>
+                    Accept
+                </button>
+
+                <button class="btn btn--ghost btn--small" type="button" data-cookie-cancel>
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
