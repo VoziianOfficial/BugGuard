@@ -4620,3 +4620,55 @@ button {
         font-size: 0.82rem;
     }
 }
+
+/* Pest guide simple premium adjustments */
+.pest-guide__actions {
+    margin-top: 30px;
+}
+
+.pest-guide .guide-row {
+    border-bottom-color: rgba(14, 42, 34, 0.38);
+}
+
+.pest-guide .guide-row:last-child {
+    border-bottom: 0;
+}
+
+.pest-guide .guide-row i,
+.pest-guide .guide-row svg {
+    color: var(--color-alert);
+    stroke: currentColor;
+    transition:
+        color 0.25s ease,
+        transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.pest-guide .guide-row:hover i,
+.pest-guide .guide-row:hover svg {
+    color: var(--color-alert);
+    transform: translateX(8px);
+}
+
+.pest-guide .guide-row::after {
+    background: var(--color-dark-green);
+}
+
+/* Pest guide buttons */
+.pest-guide__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.btn--outline-dark {
+    color: var(--color-dark-green);
+    background: transparent;
+    border-color: rgba(14, 42, 34, 0.35);
+}
+
+.btn--outline-dark:hover {
+    color: var(--color-black);
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+}
