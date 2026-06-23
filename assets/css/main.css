@@ -4060,3 +4060,13 @@ button {
     left: 44px;
 }
 
+/* Responsible info heading wider — two lines */
+.responsible-info .section-heading--center {
+    max-width: 980px;
+    width: 100%;
+}
+
+.responsible-info .section-heading h2 {
+    max-width: 980px;
+    margin-inline: auto;
+}
