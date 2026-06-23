@@ -3982,3 +3982,36 @@ button {
         max-width: 100%;
     }
 }
+
+/* Process section photo adjustment */
+.process-section__photo {
+    width: calc(100% + 54px);
+    margin-left: -54px;
+    min-height: 690px;
+}
+
+.process-section__photo img {
+    min-height: 690px;
+}
+
+@media (max-width: 1080px) {
+    .process-section__photo {
+        width: 100%;
+        margin-left: 0;
+        min-height: 460px;
+    }
+
+    .process-section__photo img {
+        min-height: 460px;
+    }
+}
+
+@media (max-width: 560px) {
+    .process-section__photo {
+        min-height: 340px;
+    }
+
+    .process-section__photo img {
+        min-height: 340px;
+    }
+}
