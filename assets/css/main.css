@@ -4075,7 +4075,7 @@ button {
 /* About request context background photo section */
 .request-context {
     position: relative;
-    min-height: 460px;
+    height: 560px;
     display: flex;
     align-items: center;
     color: var(--color-white);
@@ -4101,6 +4101,8 @@ button {
     grid-template-columns: minmax(0, 0.9fr) minmax(280px, 0.52fr);
     gap: clamp(30px, 6vw, 82px);
     align-items: center;
+    min-height: 100%;
+    box-sizing: border-box;
     padding-block: clamp(68px, 8vw, 110px);
 }
 
@@ -4187,6 +4189,10 @@ button {
 }
 
 @media (max-width: 900px) {
+    .request-context {
+        height: 620px;
+    }
+
     .request-context__inner {
         grid-template-columns: 1fr;
     }
@@ -4198,7 +4204,7 @@ button {
 
 @media (max-width: 680px) {
     .request-context {
-        min-height: auto;
+        height: 540px;
     }
 
     .request-context__inner {
