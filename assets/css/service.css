@@ -700,3 +700,102 @@
         border-radius: 22px;
     }
 }
+
+/* Service signs section — equal stacked photos */
+.service-signs__media {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+    align-self: stretch;
+}
+
+.service-signs__photo,
+.service-signs__photo--large,
+.service-signs__photo--small {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    min-height: 330px;
+    aspect-ratio: 16 / 10;
+    margin: 0;
+    border-radius: var(--radius-lg);
+}
+
+.service-signs__photo img,
+.service-signs__photo--large img,
+.service-signs__photo--small img {
+    width: 100%;
+    height: 100%;
+    min-height: 330px;
+    object-fit: cover;
+}
+
+.service-signs__photo,
+.service-signs__photo--large,
+.service-signs__photo--small {
+    min-height: 380px;
+    aspect-ratio: 16 / 9;
+}
+
+.service-signs__photo img,
+.service-signs__photo--large img,
+.service-signs__photo--small img {
+    min-height: 380px;
+}
+
+@media (max-width: 720px) {
+
+    .service-signs__photo,
+    .service-signs__photo--large,
+    .service-signs__photo--small {
+        min-height: 240px;
+        aspect-ratio: 16 / 11;
+    }
+
+    .service-signs__photo img,
+    .service-signs__photo--large img,
+    .service-signs__photo--small img {
+        min-height: 240px;
+    }
+}
+
+/* Service signs — reduce top spacing and move card icons right */
+.service-signs {
+    padding-top: clamp(36px, 4vw, 62px);
+}
+
+.sign-mini-card {
+    position: relative;
+    padding-right: 86px;
+}
+
+.sign-mini-card svg {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 42px;
+    height: 42px;
+    margin: 0;
+}
+
+@media (max-width: 560px) {
+    .sign-mini-card {
+        padding-right: 72px;
+    }
+
+    .sign-mini-card svg {
+        top: 22px;
+        right: 22px;
+        width: 36px;
+        height: 36px;
+    }
+}
+
+/* Service signs heading softer and smaller */
+.service-signs__content h2 {
+    max-width: 680px;
+    font-size: clamp(1.85rem, 3.4vw, 3.55rem);
+    font-weight: 780;
+    line-height: 1.04;
+    letter-spacing: -0.035em;
+}
