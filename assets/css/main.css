@@ -335,11 +335,19 @@ button {
 /* HEADER */
 
 .site-header {
-    position: sticky;
+    position: fixed;
+    left: 0;
+    right: 0;
     top: 0;
     z-index: 1000;
     padding: 14px 18px 0;
+    background: transparent;
     pointer-events: none;
+}
+
+.site-header.is-scrolled .site-header__shell {
+    background: rgba(5, 7, 6, 0.98);
+    box-shadow: 0 24px 90px rgba(5, 7, 6, 0.42);
 }
 
 .site-header__shell {
@@ -1735,9 +1743,10 @@ button {
         letter-spacing: -0.07em;
     }
 
-    .site-header {
-        padding: 10px 10px 0;
-    }
+ .site-header {
+     padding: 10px 10px 0;
+     background: transparent;
+ }
 
     .site-header__shell {
         padding: 9px 10px 9px 14px;
@@ -3494,4 +3503,12 @@ button {
     .contact-side__photos {
         grid-template-columns: 1fr;
     }
+}
+
+.hero,
+.hero--home,
+.hero--inner,
+.service-hero,
+.legal-hero {
+    margin-top: 0;
 }
