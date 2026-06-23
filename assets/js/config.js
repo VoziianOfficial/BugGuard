@@ -23,7 +23,7 @@ window.SiteConfig = {
 
     services: [
         {
-            title: 'General Pest Control',
+            title: 'General Pest',
             shortTitle: 'General Pests',
             file: 'general-pest-control.html',
             icon: 'bug',
@@ -59,7 +59,7 @@ window.SiteConfig = {
             description: 'Find provider options for spider activity, webs, garages, basements, and outdoor edges.'
         },
         {
-            title: 'Wasp & Hornet Nest Removal',
+            title: 'Wasp & Hornet',
             shortTitle: 'Wasps & Hornets',
             file: 'wasp-hornet-nest-removal.html',
             icon: 'shield-alert',
