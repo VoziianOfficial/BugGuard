@@ -4459,3 +4459,141 @@ button {
         border-bottom: 1px solid rgba(167, 245, 106, 0.22);
     }
 }
+
+/* Service selector — circular cards with centered colored icons */
+.service-selector {
+    padding-block: clamp(56px, 6vw, 88px);
+}
+
+.service-selector__grid {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(130px, 1fr));
+    gap: clamp(14px, 2vw, 24px);
+    align-items: center;
+}
+
+.selector-card {
+    --selector-color: var(--color-accent);
+
+    position: relative;
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 16px;
+    padding: 22px;
+    color: var(--color-white);
+    background: rgba(255, 255, 255, 0.035);
+    border: 1px solid color-mix(in srgb, var(--selector-color) 42%, transparent);
+    border-radius: 50%;
+    box-shadow: 0 22px 60px rgba(5, 7, 6, 0.24);
+    text-align: center;
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.selector-card::before {
+    content: "";
+    position: absolute;
+    inset: 12px;
+    border: 1px solid color-mix(in srgb, var(--selector-color) 30%, transparent);
+    border-radius: 50%;
+    pointer-events: none;
+    transition:
+        inset 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.selector-card::after {
+    content: "";
+    position: absolute;
+    left: 24%;
+    right: 24%;
+    bottom: 24%;
+    height: 2px;
+    background: var(--selector-color);
+    border-radius: 999px;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.28s ease;
+}
+
+.selector-card svg {
+    position: relative;
+    z-index: 2;
+    width: clamp(38px, 4vw, 58px);
+    height: clamp(38px, 4vw, 58px);
+    color: var(--selector-color);
+    stroke-width: 1.55;
+    margin: 0;
+    flex: 0 0 auto;
+    transition:
+        transform 0.3s ease,
+        color 0.3s ease;
+}
+
+.selector-card span {
+    position: relative;
+    z-index: 2;
+    max-width: 130px;
+    color: var(--color-white);
+    font-size: clamp(0.82rem, 1vw, 0.98rem);
+    font-weight: 900;
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+    text-align: center;
+}
+
+.selector-card:hover {
+    transform: translateY(-8px) scale(1.025);
+    background: rgba(167, 245, 106, 0.06);
+    border-color: var(--selector-color);
+    box-shadow: 0 24px 70px color-mix(in srgb, var(--selector-color) 20%, rgba(5, 7, 6, 0.4));
+}
+
+.selector-card:hover::before {
+    inset: 7px;
+    border-color: color-mix(in srgb, var(--selector-color) 62%, transparent);
+}
+
+.selector-card:hover::after {
+    transform: scaleX(1);
+}
+
+.selector-card:hover svg {
+    transform: translateY(-5px) rotate(-5deg) scale(1.06);
+}
+
+/* Different colors from BugGuard palette */
+.selector-card--lime {
+    --selector-color: var(--color-accent);
+}
+
+.selector-card--soft {
+    --selector-color: var(--color-accent-soft);
+}
+
+.selector-card--red {
+    --selector-color: var(--color-alert);
+}
+
+.selector-card--green {
+    --selector-color: #2FD38F;
+}
+
+.selector-card--alert {
+    --selector-color: #F2C94C;
+}
+
+.selector-card--milk {
+    --selector-color: #F5F2EA;
+}
