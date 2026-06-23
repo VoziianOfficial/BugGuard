@@ -584,6 +584,39 @@
         });
     }
 
+    function initProviderPromptsSwiper() {
+        const swiperElement = document.querySelector('[data-provider-prompts-swiper]');
+
+        if (!swiperElement || typeof Swiper === 'undefined') return;
+
+        new Swiper(swiperElement, {
+            loop: true,
+            speed: 700,
+            slidesPerView: 1,
+            spaceBetween: 18,
+            grabCursor: true,
+            effect: 'creative',
+            creativeEffect: {
+                prev: {
+                    translate: ['-8%', 0, -90],
+                    opacity: 0.35
+                },
+                next: {
+                    translate: ['8%', 0, -90],
+                    opacity: 0.35
+                }
+            },
+            navigation: {
+                prevEl: '[data-provider-prompts-prev]',
+                nextEl: '[data-provider-prompts-next]'
+            },
+            pagination: {
+                el: '[data-provider-prompts-pagination]',
+                clickable: true
+            }
+        });
+    }
+
     const init = () => {
         initConfigInjection();
         initActiveLinks();
@@ -597,6 +630,7 @@
         initHeaderScrollState();
         initLibraries();
         initReasonSwitcher();
+        initProviderPromptsSwiper();
 
         window.addEventListener('load', () => {
             if (window.AOS) {

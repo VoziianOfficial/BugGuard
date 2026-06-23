@@ -14,6 +14,7 @@
 
     <link rel="preconnect" href="https://unpkg.com">
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@11/swiper-bundle.min.css">
     <link rel="stylesheet" href="assets/css/main.css">
 </head>
 
@@ -421,6 +422,105 @@
         </div>
     </section>
 
+            <!-- EXTRA SECTION: PROVIDER QUESTIONS SWIPER -->
+            <section class="provider-prompts section section--deep" id="provider-questions"
+                aria-labelledby="provider-questions-title">
+                <div class="container provider-prompts__grid">
+                    <div class="provider-prompts__intro" data-aos="fade-right">
+                        <p class="section-kicker section-kicker--light">Provider questions</p>
+            
+                        <h2 id="provider-questions-title">
+                            Ask better questions before choosing a provider option.
+                        </h2>
+            
+                        <p>
+                            These prompts help homeowners compare local provider options more clearly. They are not pest diagnosis,
+                            treatment advice, or a guarantee of results.
+                        </p>
+            
+                        <div class="provider-prompts__controls" aria-label="Provider question slider controls">
+                            <button class="provider-prompts__arrow provider-prompts__arrow--prev" type="button"
+                                aria-label="Previous question" data-provider-prompts-prev>
+                                <i data-lucide="arrow-left" aria-hidden="true"></i>
+                            </button>
+            
+                            <button class="provider-prompts__arrow provider-prompts__arrow--next" type="button"
+                                aria-label="Next question" data-provider-prompts-next>
+                                <i data-lucide="arrow-right" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+            
+                    <div class="provider-prompts__stage" data-aos="fade-left">
+                        <div class="swiper provider-prompts__swiper" data-provider-prompts-swiper>
+                            <div class="swiper-wrapper">
+                                <article class="swiper-slide provider-prompt-slide">
+                                    <span class="provider-prompt-slide__count">01</span>
+                                    <i data-lucide="scan-search" aria-hidden="true"></i>
+            
+                                    <p>Ask about evaluation scope</p>
+                                    <h3>What will be checked before any provider suggests next steps?</h3>
+            
+                                    <div class="provider-prompt-slide__note">
+                                        Helps compare whether the provider explains the situation clearly before discussing options.
+                                    </div>
+                                </article>
+            
+                                <article class="swiper-slide provider-prompt-slide">
+                                    <span class="provider-prompt-slide__count">02</span>
+                                    <i data-lucide="clipboard-list" aria-hidden="true"></i>
+            
+                                    <p>Ask about preparation</p>
+                                    <h3>What should be prepared before a visit or provider follow-up?</h3>
+            
+                                    <div class="provider-prompt-slide__note">
+                                        Useful for understanding access, photos, pets, fabrics, storage zones, or indoor areas.
+                                    </div>
+                                </article>
+            
+                                <article class="swiper-slide provider-prompt-slide">
+                                    <span class="provider-prompt-slide__count">03</span>
+                                    <i data-lucide="badge-alert" aria-hidden="true"></i>
+            
+                                    <p>Ask about limitations</p>
+                                    <h3>What can and cannot be promised about timing, pricing, or results?</h3>
+            
+                                    <div class="provider-prompt-slide__note">
+                                        Keeps expectations clear because BugGuard does not guarantee provider outcomes.
+                                    </div>
+                                </article>
+            
+                                <article class="swiper-slide provider-prompt-slide">
+                                    <span class="provider-prompt-slide__count">04</span>
+                                    <i data-lucide="repeat-2" aria-hidden="true"></i>
+            
+                                    <p>Ask about recurring signs</p>
+                                    <h3>How should repeated activity be described or tracked?</h3>
+            
+                                    <div class="provider-prompt-slide__note">
+                                        Helps organize details like frequency, location, time of day, and visible signs.
+                                    </div>
+                                </article>
+            
+                                <article class="swiper-slide provider-prompt-slide">
+                                    <span class="provider-prompt-slide__count">05</span>
+                                    <i data-lucide="messages-square" aria-hidden="true"></i>
+            
+                                    <p>Ask about follow-up</p>
+                                    <h3>What follow-up expectations should be discussed before choosing?</h3>
+            
+                                    <div class="provider-prompt-slide__note">
+                                        Useful for comparing communication style, next steps, and service scope.
+                                    </div>
+                                </article>
+                            </div>
+            
+                            <div class="provider-prompts__pagination" data-provider-prompts-pagination></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
         <!-- SECTION 4: PEST ISSUE GUIDE -->
         <section class="pest-guide section section--milk" id="pest-guide" aria-labelledby="guide-title">
             <div class="container pest-guide__grid">
@@ -488,6 +588,7 @@
                 </div>
             </div>
         </section>
+
 
         <!-- SECTION 5: COMPARE PROVIDER OPTIONS -->
         <section class="compare-options section section--deep" id="compare" aria-labelledby="compare-title">
@@ -667,6 +768,8 @@
 
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <script src="https://unpkg.com/swiper@11/swiper-bundle.min.js"></script>
 
     <script src="assets/js/config.js"></script>
     <script src="assets/js/main.js"></script>
