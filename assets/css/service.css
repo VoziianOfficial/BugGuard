@@ -799,3 +799,27 @@
     line-height: 1.04;
     letter-spacing: -0.035em;
 }
+
+/* Service final section headings softer and smaller */
+.service-final .section-heading h2,
+.service-final .service-faq__intro h2,
+.service-final .final-cta h2 {
+    font-weight: 760;
+    letter-spacing: -0.032em;
+    line-height: 1.05;
+}
+
+.service-final .section-heading h2 {
+    max-width: 680px;
+    font-size: clamp(1.8rem, 3.2vw, 3.35rem);
+}
+
+.service-final .service-faq__intro h2 {
+    max-width: 620px;
+    font-size: clamp(1.75rem, 3vw, 3.1rem);
+}
+
+.service-final .final-cta h2 {
+    max-width: 720px;
+    font-size: clamp(1.9rem, 3.5vw, 3.65rem);
+}

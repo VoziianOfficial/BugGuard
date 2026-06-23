@@ -41,7 +41,7 @@ window.SiteConfig = {
             description: 'Start a request for mice, rats, entry points, attic activity, or recurring rodent signs.'
         },
         {
-            title: 'Ant & Cockroach Control',
+            title: 'Ant & Cockroach',
             shortTitle: 'Ants & Roaches',
             file: 'ant-cockroach-control.html',
             icon: 'bug',
