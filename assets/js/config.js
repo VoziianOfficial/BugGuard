@@ -3,9 +3,11 @@
 window.SiteConfig = {
     brand: {
         name: 'BugGuard',
-        tagline: 'Independent Pest Control Provider Matching'
+        tagline: 'Independent Pest Control Provider Matching',
+        logo: 'assets/images/logo.svg',
+        logoAlt: 'BugGuard logo'
     },
-
+    
     company: {
         name: 'BugGuard',
         companyId: 'BG-PEST-2048',

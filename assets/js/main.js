@@ -31,48 +31,197 @@
         });
     };
 
-    const initConfigInjection = () => {
+    const replaceHardcodedConfigValues = () => {
         const brandName = config.brand?.name || config.company?.name || 'BugGuard';
+        const companyName = config.company?.name || brandName;
+        const companyId = config.company?.companyId || '';
+        const address = config.company?.address || '';
+        const serviceArea = config.company?.serviceArea || '';
+
         const phoneRaw = config.contact?.phoneRaw || '';
         const phoneDisplay = config.contact?.phoneDisplay || '';
         const email = config.contact?.email || '';
-        const address = config.company?.address || '';
-        const companyId = config.company?.companyId || '';
 
+        const replacements = [
+            ['BugGuard', brandName],
+            ['BG-PEST-2048', companyId],
+            ['USA Service Area', address],
+            ['Independent pest control provider matching across selected service areas', serviceArea],
+            ['hello@bugguard.com', email],
+            ['(888) 555-0148', phoneDisplay],
+            ['+18885550148', phoneRaw]
+        ].filter(([, nextValue]) => nextValue);
+
+        const replaceInString = (value) => {
+            if (!value || typeof value !== 'string') return value;
+
+            let nextValue = value;
+
+            replacements.forEach(([oldValue, newValue]) => {
+                if (!oldValue || !newValue || oldValue === newValue) return;
+                nextValue = nextValue.split(oldValue).join(newValue);
+            });
+
+            return nextValue;
+        };
+
+        const walker = document.createTreeWalker(
+            document.body,
+            NodeFilter.SHOW_TEXT,
+            {
+                acceptNode(node) {
+                    const parent = node.parentElement;
+
+                    if (!parent) return NodeFilter.FILTER_REJECT;
+
+                    const blockedTags = ['SCRIPT', 'STYLE', 'NOSCRIPT', 'TEXTAREA', 'INPUT', 'SELECT', 'OPTION'];
+
+                    if (blockedTags.includes(parent.tagName)) {
+                        return NodeFilter.FILTER_REJECT;
+                    }
+
+                    return NodeFilter.FILTER_ACCEPT;
+                }
+            }
+        );
+
+        const textNodes = [];
+
+        while (walker.nextNode()) {
+            textNodes.push(walker.currentNode);
+        }
+
+        textNodes.forEach((node) => {
+            node.nodeValue = replaceInString(node.nodeValue);
+        });
+
+        qsa('a[href^="tel:"]').forEach((link) => {
+            if (phoneRaw) {
+                link.setAttribute('href', `tel:${phoneRaw}`);
+            }
+        });
+
+        qsa('a[href^="mailto:"]').forEach((link) => {
+            if (email) {
+                link.setAttribute('href', `mailto:${email}`);
+            }
+        });
+
+        qsa('[href], [src], [alt], [title], [aria-label], [content]').forEach((element) => {
+            ['href', 'src', 'alt', 'title', 'aria-label', 'content'].forEach((attr) => {
+                if (!element.hasAttribute(attr)) return;
+
+                const currentValue = element.getAttribute(attr);
+                const nextValue = replaceInString(currentValue);
+
+                if (nextValue !== currentValue) {
+                    element.setAttribute(attr, nextValue);
+                }
+            });
+        });
+    };
+
+    const initConfigInjection = () => {
+        const brandName = config.brand?.name || config.company?.name || 'BugGuard';
+        const brandTagline = config.brand?.tagline || '';
+        const logoSrc = config.brand?.logo || 'assets/images/logo.svg';
+        const logoAlt = config.brand?.logoAlt || `${brandName} logo`;
+
+        const companyName = config.company?.name || brandName;
+        const companyId = config.company?.companyId || '';
+        const address = config.company?.address || '';
+        const serviceArea = config.company?.serviceArea || '';
+
+        const phoneRaw = config.contact?.phoneRaw || '';
+        const phoneDisplay = config.contact?.phoneDisplay || '';
+        const phoneButtonText = config.contact?.phoneButtonText || phoneDisplay || 'Call';
+        const email = config.contact?.email || '';
+        const supportHours = config.contact?.supportHours || '';
+
+        const footerDescription = config.footer?.description || '';
+        const footerCopyright = config.footer?.copyright || '';
+        const legalDisclaimer = config.legal?.disclaimer || '';
+
+        const mapHref = address
+            ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`
+            : '#';
+
+        /* TEXT */
         setText('[data-brand-name]', brandName);
-        setText('[data-phone-text]', phoneDisplay);
-        setText('[data-email-text]', email);
-        setText('[data-company-address]', address);
+        setText('[data-brand-tagline]', brandTagline);
+
+        setText('[data-company-name]', companyName);
         setText('[data-company-id]', companyId);
-        setText('[data-footer-description]', config.footer?.description || '');
-        setText('[data-footer-copyright]', config.footer?.copyright || '');
-        setText('[data-legal-disclaimer]', config.legal?.disclaimer || '');
+        setText('[data-company-address]', address);
+        setText('[data-company-service-area]', serviceArea);
+
+        setText('[data-phone-text]', phoneDisplay);
+        setText('[data-phone-button-text]', phoneButtonText);
+        setText('[data-email-text]', email);
+        setText('[data-support-hours]', supportHours);
+
+        setText('[data-footer-description]', footerDescription);
+        setText('[data-footer-copyright]', footerCopyright);
+        setText('[data-legal-disclaimer]', legalDisclaimer);
         setText('[data-current-year]', new Date().getFullYear());
 
+        /* PHONE LINKS */
         if (phoneRaw) {
-            setHref('[data-phone-link]', `tel:${phoneRaw}`);
+            qsa('[data-phone-link], a[href^="tel:"]').forEach((link) => {
+                link.setAttribute('href', `tel:${phoneRaw}`);
+                link.setAttribute('aria-label', `Call ${brandName}`);
+            });
         }
 
+        /* EMAIL LINKS */
         if (email) {
-            setHref('[data-email-link]', `mailto:${email}`);
+            qsa('[data-email-link], a[href^="mailto:"]').forEach((link) => {
+                link.setAttribute('href', `mailto:${email}`);
+                link.setAttribute('aria-label', `Email ${brandName}`);
+            });
         }
 
+        /* ADDRESS LINKS */
+        qsa('[data-address-link]').forEach((link) => {
+            link.setAttribute('href', mapHref);
+            link.setAttribute('target', '_blank');
+            link.setAttribute('rel', 'noopener noreferrer');
+        });
+
+        /* LOGO IMAGES */
+        qsa('[data-logo-img], .site-logo img, .footer-logo img, link[rel="icon"]').forEach((item) => {
+            const tagName = item.tagName.toLowerCase();
+
+            if (tagName === 'link') {
+                item.setAttribute('href', logoSrc);
+                return;
+            }
+
+            item.setAttribute('src', logoSrc);
+            item.setAttribute('alt', logoAlt);
+        });
+
+        /* SERVICE LINKS */
         qsa('[data-service-links]').forEach((container) => {
+            const mode = container.dataset.serviceLinks || 'default';
+
             container.innerHTML = '';
 
             (config.services || []).forEach((service) => {
-                const link = createServiceLink(service);
+                const link = document.createElement('a');
 
-                if (container.dataset.serviceLinks === 'mobile') {
-                    link.innerHTML = `
-                        <span>${service.title}</span>
-                    `;
+                link.href = service.file || '#';
+                link.textContent = service.title || service.shortTitle || 'Service';
+
+                if (mode === 'mobile') {
+                    link.innerHTML = `<span>${safeText(service.title || service.shortTitle)}</span>`;
                 }
 
                 container.appendChild(link);
             });
         });
 
+        /* SERVICE SELECT OPTIONS */
         qsa('[data-service-select]').forEach((select) => {
             const currentValue = select.value;
 
@@ -80,8 +229,8 @@
 
             (config.services || []).forEach((service) => {
                 const option = document.createElement('option');
-                option.value = service.title;
-                option.textContent = service.title;
+                option.value = service.title || service.shortTitle;
+                option.textContent = service.title || service.shortTitle;
                 select.appendChild(option);
             });
 
@@ -89,8 +238,45 @@
                 select.value = currentValue;
             }
         });
-    };
 
+        /* CTA DATA */
+        if (config.cta) {
+            setText('[data-cta-title]', config.cta.title || '');
+            setText('[data-cta-text]', config.cta.text || '');
+            setText('[data-cta-primary-label]', config.cta.primaryLabel || '');
+            setText('[data-cta-secondary-label]', config.cta.secondaryLabel || '');
+
+            qsa('[data-cta-image]').forEach((image) => {
+                if (config.cta.image) {
+                    image.setAttribute('src', config.cta.image);
+                }
+
+                image.setAttribute('alt', config.cta.title || `${brandName} request image`);
+            });
+        }
+
+        /* PAGE META */
+        const pageKey = document.body?.dataset?.page;
+        const pageConfig = config.pages?.[pageKey];
+
+        if (pageConfig) {
+            if (pageConfig.title) {
+                document.title = pageConfig.title;
+            }
+
+            const metaDescription = document.querySelector('meta[name="description"]');
+
+            if (metaDescription && pageConfig.description) {
+                metaDescription.setAttribute('content', pageConfig.description);
+            }
+        }
+
+        replaceHardcodedConfigValues();
+
+        if (window.lucide) {
+            window.lucide.createIcons();
+        }
+    };
     const initActiveLinks = () => {
         const currentPage = window.location.pathname.split('/').pop() || 'index.html';
 
@@ -638,7 +824,7 @@
             }
 
             if (window.lucide) {
-                lucide.createIcons();
+                window.lucide.createIcons();
             }
         });
     };
