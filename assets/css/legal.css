@@ -1,13 +1,4 @@
-/* ==================================================
-   BUGGUARD LEGAL PAGES
-   Shared CSS for privacy / terms / cookies
-================================================== */
-
 @import url("main.css");
-
-/* ==================================================
-   LEGAL HERO
-================================================== */
 
 .legal-hero {
     position: relative;
@@ -63,10 +54,6 @@
     font-size: clamp(1rem, 1.35vw, 1.16rem);
     line-height: 1.72;
 }
-
-/* ==================================================
-   LEGAL CONTENT
-================================================== */
 
 .legal-page {
     background: var(--color-milk);
@@ -319,17 +306,9 @@
     margin-top: 12px;
 }
 
-/* ==================================================
-   LEGAL CTA STRIP
-================================================== */
-
 .legal-cta-strip {
     margin-top: clamp(38px, 6vw, 70px);
 }
-
-/* ==================================================
-   RESPONSIVE
-================================================== */
 
 @media (max-width: 980px) {
     .legal-layout {
@@ -384,7 +363,6 @@
         justify-content: center;
     }
 }
-/* Legal contact card — fix shifted inner text */
 .legal-contact-card {
     display: grid;
     gap: 0;
@@ -437,9 +415,6 @@
 
 
 
-/* FINAL LEGAL PAGE FIXES */
-
-/* Legal contact card — fix shifted inner text */
 .legal-contact-card {
     display: grid;
     gap: 0;
@@ -486,7 +461,6 @@
 }
 
 
-/* Legal hero — correct container behavior */
 .legal-hero {
     padding-inline: 0;
 }
@@ -513,7 +487,6 @@
 }
 
 
-/* Final desktop sticky behavior for legal sidebar */
 .legal-page,
 .legal-layout {
     overflow: visible;

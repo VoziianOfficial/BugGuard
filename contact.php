@@ -2,15 +2,6 @@
 
 declare(strict_types=1);
 
-/*
-|--------------------------------------------------------------------------
-| BugGuard Contact Form Handler
-|--------------------------------------------------------------------------
-| This file receives contact form submissions and saves them into files.
-| It is designed for a static/PHP hosting environment.
-|--------------------------------------------------------------------------
-*/
-
 header('Content-Type: application/json; charset=UTF-8');
 header('X-Content-Type-Options: nosniff');
 header('Cache-Control: no-store, no-cache, must-revalidate, max-age=0');

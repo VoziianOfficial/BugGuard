@@ -1,13 +1,4 @@
-/* ==================================================
-   BUGGUARD SERVICE PAGES
-   Shared CSS for all individual service pages
-================================================== */
-
 @import url("main.css");
-
-/* ==================================================
-   SERVICE HERO
-================================================== */
 
 .service-hero {
     min-height: clamp(620px, 82vh, 780px);
@@ -16,10 +7,6 @@
 .service-hero .hero__lead {
     max-width: 700px;
 }
-
-/* ==================================================
-   SECTION 2: SERVICE OVERVIEW / PROBLEM CARDS
-================================================== */
 
 .service-problems {
     position: relative;
@@ -133,10 +120,6 @@
     color: var(--color-accent-soft);
     transform: rotate(-8deg) scale(1.05);
 }
-
-/* ==================================================
-   SECTION 3: SIGNS / SITUATIONS
-================================================== */
 
 .service-signs__grid {
     display: grid;
@@ -285,10 +268,6 @@
     margin-top: 30px;
 }
 
-/* ==================================================
-   SECTION 4: MATCHING PROCESS / PROVIDER EVALUATION
-================================================== */
-
 .matching-process {
     padding-block: clamp(48px, 6vw, 82px);
 }
@@ -376,10 +355,6 @@
     color: var(--color-accent-soft);
     transform: translateY(-4px) rotate(-5deg);
 }
-
-/* ==================================================
-   SECTION 5: RELATED SERVICES / FAQ / CTA
-================================================== */
 
 .service-final {
     overflow: hidden;
@@ -498,10 +473,6 @@
     line-height: 1.7;
 }
 
-/* ==================================================
-   SERVICE PAGE CONTENT HELPERS
-================================================== */
-
 .service-note {
     max-width: 840px;
     margin: 0;
@@ -537,10 +508,6 @@
     font-size: 0.78rem;
     font-weight: 850;
 }
-
-/* ==================================================
-   RESPONSIVE
-================================================== */
 
 @media (max-width: 1180px) {
     .service-problems__grid {
@@ -702,7 +669,6 @@
     }
 }
 
-/* Service signs section — equal stacked photos */
 .service-signs__media {
     display: grid;
     grid-template-columns: 1fr;
@@ -760,7 +726,6 @@
     }
 }
 
-/* Service signs — reduce top spacing and move card icons right */
 .service-signs {
     padding-top: clamp(36px, 4vw, 62px);
 }
@@ -792,7 +757,6 @@
     }
 }
 
-/* Service signs heading softer and smaller */
 .service-signs__content h2 {
     max-width: 680px;
     font-size: clamp(1.85rem, 3.4vw, 3.55rem);
@@ -801,7 +765,6 @@
     letter-spacing: -0.035em;
 }
 
-/* Service final section headings softer and smaller */
 .service-final .section-heading h2,
 .service-final .service-faq__intro h2,
 .service-final .final-cta h2 {
@@ -825,7 +788,6 @@
     font-size: clamp(1.9rem, 3.5vw, 3.65rem);
 }
 
-/* Issue zones swiper section */
 .issue-zones {
     position: relative;
     overflow: hidden;
@@ -1030,7 +992,6 @@
     }
 }
 
-/* Issue zones — reduce bottom spacing */
 .issue-zones {
     padding-bottom: clamp(34px, 4vw, 58px);
 }
