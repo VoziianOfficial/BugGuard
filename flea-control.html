@@ -14,6 +14,7 @@
 
     <link rel="preconnect" href="https://unpkg.com">
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@11/swiper-bundle.min.css">
     <link rel="stylesheet" href="assets/css/service.css">
 </head>
 
@@ -152,11 +153,12 @@
 
         <section class="page-section-nav" aria-label="Service page section navigation">
             <div class="container page-section-nav__inner">
-                <a href="#problems">Problems</a>
-                <a href="#signs">Signs</a>
-                <a href="#matching">Matching</a>
-                <a href="#related">Related</a>
-                <a href="#service-faq">FAQ</a>
+    <a href="#problems">Problems</a>
+    <a href="#signs">Signs</a>
+    <a href="#issue-zones">Zones</a>
+    <a href="#matching">Matching</a>
+    <a href="#related">Related</a>
+    <a href="#service-faq">FAQ</a>
             </div>
         </section>
 
@@ -285,6 +287,69 @@
                             Compare service categories
                             <i data-lucide="arrow-right" aria-hidden="true"></i>
                         </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="issue-zones section section--deep" id="issue-zones" aria-labelledby="issue-zones-title">
+            <div class="container issue-zones__grid">
+                <div class="issue-zones__intro" data-aos="fade-right">
+                    <p class="section-kicker section-kicker--light">Areas to describe</p>
+                    <h2 id="issue-zones-title">Describe the soft-surface zones before comparing providers.</h2>
+                    <p>
+                        Flea-related requests are easier to organize when you mention fabrics, pet spaces, and recurring indoor
+                        signs.
+                        BugGuard helps structure this context for provider matching.
+                    </p>
+        
+                    <div class="issue-zones__controls">
+                        <button class="issue-zones__arrow" type="button" data-issue-zones-prev aria-label="Previous zone">
+                            <i data-lucide="arrow-left"></i>
+                        </button>
+                        <button class="issue-zones__arrow" type="button" data-issue-zones-next aria-label="Next zone">
+                            <i data-lucide="arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+        
+                <div class="issue-zones__stage" data-aos="fade-left">
+                    <div class="swiper issue-zones__swiper" data-issue-zones-swiper>
+                        <div class="swiper-wrapper">
+                            <article class="swiper-slide issue-zone-slide">
+                                <img src="assets/images/services/flea-zone-carpets.jpg" alt="Carpet and rug area"
+                                    loading="lazy">
+                                <i data-lucide="sofa"></i>
+                                <div class="issue-zone-slide__content">
+                                    <span class="issue-zone-slide__count">01</span>
+                                    <h3>Carpets & rugs</h3>
+                                    <p>Mention rooms where fabric flooring, rugs, or soft surfaces are involved.</p>
+                                </div>
+                            </article>
+        
+                            <article class="swiper-slide issue-zone-slide">
+                                <img src="assets/images/services/flea-zone-pets.jpg" alt="Pet resting area" loading="lazy">
+                                <i data-lucide="paw-print"></i>
+                                <div class="issue-zone-slide__content">
+                                    <span class="issue-zone-slide__count">02</span>
+                                    <h3>Pet resting areas</h3>
+                                    <p>Describe pet beds, crates, blankets, and frequently used resting zones.</p>
+                                </div>
+                            </article>
+        
+                            <article class="swiper-slide issue-zone-slide">
+                                <img src="assets/images/services/flea-zone-bedding.jpg" alt="Bedding and fabric area"
+                                    loading="lazy">
+                                <i data-lucide="bed"></i>
+                                <div class="issue-zone-slide__content">
+                                    <span class="issue-zone-slide__count">03</span>
+                                    <h3>Bedding & fabrics</h3>
+                                    <p>Include bedding, upholstery, blankets, sofas, and rooms where signs keep returning.</p>
+                                </div>
+                            </article>
+                        </div>
+        
+                        <div class="issue-zones__pagination" data-issue-zones-pagination></div>
                     </div>
                 </div>
             </div>
@@ -576,6 +641,7 @@
 
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://unpkg.com/swiper@11/swiper-bundle.min.js"></script>
 
     <script src="assets/js/config.js"></script>
     <script src="assets/js/service.js"></script>

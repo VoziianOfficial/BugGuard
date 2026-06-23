@@ -396,6 +396,41 @@
         }
     };
 
+    function initIssueZonesSwiper() {
+        const swiperElement = document.querySelector('[data-issue-zones-swiper]');
+
+        if (!swiperElement || typeof Swiper === 'undefined') return;
+
+        new Swiper(swiperElement, {
+            loop: true,
+            speed: 750,
+            slidesPerView: 1,
+            spaceBetween: 18,
+            grabCursor: true,
+            effect: 'creative',
+            creativeEffect: {
+                prev: {
+                    translate: ['-10%', 0, -120],
+                    rotate: [0, 0, -3],
+                    opacity: 0.35
+                },
+                next: {
+                    translate: ['10%', 0, -120],
+                    rotate: [0, 0, 3],
+                    opacity: 0.35
+                }
+            },
+            navigation: {
+                prevEl: '[data-issue-zones-prev]',
+                nextEl: '[data-issue-zones-next]'
+            },
+            pagination: {
+                el: '[data-issue-zones-pagination]',
+                clickable: true
+            }
+        });
+    }
+
     const init = () => {
         initConfigInjection();
         initServiceHeroData();
@@ -407,6 +442,7 @@
         initSmoothAccordions();
         initHeaderScrollState();
         initLibraries();
+        initIssueZonesSwiper();
 
         window.addEventListener('load', () => {
             if (window.AOS) {

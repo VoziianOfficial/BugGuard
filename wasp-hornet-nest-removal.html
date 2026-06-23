@@ -14,6 +14,7 @@
 
     <link rel="preconnect" href="https://unpkg.com">
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@11/swiper-bundle.min.css">
     <link rel="stylesheet" href="assets/css/service.css">
 </head>
 
@@ -152,11 +153,12 @@
 
         <section class="page-section-nav" aria-label="Service page section navigation">
             <div class="container page-section-nav__inner">
-                <a href="#problems">Problems</a>
-                <a href="#signs">Signs</a>
-                <a href="#matching">Matching</a>
-                <a href="#related">Related</a>
-                <a href="#service-faq">FAQ</a>
+        <a href="#problems">Problems</a>
+        <a href="#signs">Signs</a>
+        <a href="#issue-zones">Zones</a>
+        <a href="#matching">Matching</a>
+        <a href="#related">Related</a>
+        <a href="#service-faq">FAQ</a>
             </div>
         </section>
 
@@ -285,6 +287,68 @@
                             Compare service categories
                             <i data-lucide="arrow-right" aria-hidden="true"></i>
                         </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="issue-zones section section--deep" id="issue-zones" aria-labelledby="issue-zones-title">
+            <div class="container issue-zones__grid">
+                <div class="issue-zones__intro" data-aos="fade-right">
+                    <p class="section-kicker section-kicker--light">Areas to describe</p>
+                    <h2 id="issue-zones-title">Describe visible nest areas and outdoor activity zones.</h2>
+                    <p>
+                        Stinging insect requests are clearer when you describe where the nest or activity appears.
+                        BugGuard helps organize this context for provider matching only.
+                    </p>
+        
+                    <div class="issue-zones__controls">
+                        <button class="issue-zones__arrow" type="button" data-issue-zones-prev aria-label="Previous zone">
+                            <i data-lucide="arrow-left"></i>
+                        </button>
+                        <button class="issue-zones__arrow" type="button" data-issue-zones-next aria-label="Next zone">
+                            <i data-lucide="arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+        
+                <div class="issue-zones__stage" data-aos="fade-left">
+                    <div class="swiper issue-zones__swiper" data-issue-zones-swiper>
+                        <div class="swiper-wrapper">
+                            <article class="swiper-slide issue-zone-slide">
+                                <img src="assets/images/services/wasp-zone-roofline.jpg" alt="Roofline and eaves area"
+                                    loading="lazy">
+                                <i data-lucide="home"></i>
+                                <div class="issue-zone-slide__content">
+                                    <span class="issue-zone-slide__count">01</span>
+                                    <h3>Roofline & eaves</h3>
+                                    <p>Mention roof edges, eaves, gutters, siding gaps, or high exterior areas.</p>
+                                </div>
+                            </article>
+        
+                            <article class="swiper-slide issue-zone-slide">
+                                <img src="assets/images/services/wasp-zone-yard.jpg" alt="Yard edge and outdoor area"
+                                    loading="lazy">
+                                <i data-lucide="tree-pine"></i>
+                                <div class="issue-zone-slide__content">
+                                    <span class="issue-zone-slide__count">02</span>
+                                    <h3>Yard or shed areas</h3>
+                                    <p>Describe outdoor activity around sheds, fences, trees, garden areas, or yard edges.</p>
+                                </div>
+                            </article>
+        
+                            <article class="swiper-slide issue-zone-slide">
+                                <img src="assets/images/services/wasp-zone-entry.jpg" alt="Home entry path area" loading="lazy">
+                                <i data-lucide="shield-alert"></i>
+                                <div class="issue-zone-slide__content">
+                                    <span class="issue-zone-slide__count">03</span>
+                                    <h3>Entry paths</h3>
+                                    <p>Note activity near doors, walkways, patios, children’s areas, or high-traffic paths.</p>
+                                </div>
+                            </article>
+                        </div>
+        
+                        <div class="issue-zones__pagination" data-issue-zones-pagination></div>
                     </div>
                 </div>
             </div>
@@ -576,6 +640,7 @@
 
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://unpkg.com/swiper@11/swiper-bundle.min.js"></script>
 
     <script src="assets/js/config.js"></script>
     <script src="assets/js/service.js"></script>

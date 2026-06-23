@@ -14,6 +14,7 @@
 
     <link rel="preconnect" href="https://unpkg.com">
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@11/swiper-bundle.min.css">
     <link rel="stylesheet" href="assets/css/service.css">
 </head>
 
@@ -152,11 +153,12 @@
 
         <section class="page-section-nav" aria-label="Service page section navigation">
             <div class="container page-section-nav__inner">
-                <a href="#problems">Problems</a>
-                <a href="#signs">Signs</a>
-                <a href="#matching">Matching</a>
-                <a href="#related">Related</a>
-                <a href="#service-faq">FAQ</a>
+            <a href="#problems">Problems</a>
+            <a href="#signs">Signs</a>
+            <a href="#issue-zones">Zones</a>
+            <a href="#matching">Matching</a>
+            <a href="#related">Related</a>
+            <a href="#service-faq">FAQ</a>
             </div>
         </section>
 
@@ -284,6 +286,71 @@
                             Compare service categories
                             <i data-lucide="arrow-right" aria-hidden="true"></i>
                         </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="issue-zones section section--deep" id="issue-zones" aria-labelledby="issue-zones-title">
+            <div class="container issue-zones__grid">
+                <div class="issue-zones__intro" data-aos="fade-right">
+                    <p class="section-kicker section-kicker--light">Areas to describe</p>
+                    <h2 id="issue-zones-title">Describe where rodent-related signs appear.</h2>
+                    <p>
+                        Rodent-related requests are clearer when you mention sounds, storage areas, possible entry points,
+                        and repeated signs before comparing provider options.
+                    </p>
+        
+                    <div class="issue-zones__controls">
+                        <button class="issue-zones__arrow" type="button" data-issue-zones-prev aria-label="Previous zone">
+                            <i data-lucide="arrow-left"></i>
+                        </button>
+                        <button class="issue-zones__arrow" type="button" data-issue-zones-next aria-label="Next zone">
+                            <i data-lucide="arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+        
+                <div class="issue-zones__stage" data-aos="fade-left">
+                    <div class="swiper issue-zones__swiper" data-issue-zones-swiper>
+                        <div class="swiper-wrapper">
+                            <article class="swiper-slide issue-zone-slide">
+                                <img src="assets/images/services/rodent-zone-attic.jpg" alt="Attic storage area" loading="lazy">
+                                <i data-lucide="home"></i>
+                                <div class="issue-zone-slide__content">
+                                    <span class="issue-zone-slide__count">01</span>
+                                    <h3>Attic or upper areas</h3>
+                                    <p>Mention scratching sounds, movement, insulation areas, or storage zones above living
+                                        spaces.</p>
+                                </div>
+                            </article>
+        
+                            <article class="swiper-slide issue-zone-slide">
+                                <img src="assets/images/services/rodent-zone-kitchen.jpg" alt="Kitchen storage area"
+                                    loading="lazy">
+                                <i data-lucide="package"></i>
+                                <div class="issue-zone-slide__content">
+                                    <span class="issue-zone-slide__count">02</span>
+                                    <h3>Food & storage zones</h3>
+                                    <p>Describe pantry areas, cabinets, garages, boxes, or places where droppings may appear.
+                                    </p>
+                                </div>
+                            </article>
+        
+                            <article class="swiper-slide issue-zone-slide">
+                                <img src="assets/images/services/rodent-zone-entry.jpg" alt="Exterior edge and entry area"
+                                    loading="lazy">
+                                <i data-lucide="door-open"></i>
+                                <div class="issue-zone-slide__content">
+                                    <span class="issue-zone-slide__count">03</span>
+                                    <h3>Possible entry points</h3>
+                                    <p>Note exterior gaps, wall edges, basement access points, doors, vents, or utility
+                                        openings.</p>
+                                </div>
+                            </article>
+                        </div>
+        
+                        <div class="issue-zones__pagination" data-issue-zones-pagination></div>
                     </div>
                 </div>
             </div>
@@ -573,6 +640,7 @@
 
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://unpkg.com/swiper@11/swiper-bundle.min.js"></script>
 
     <script src="assets/js/config.js"></script>
     <script src="assets/js/service.js"></script>
