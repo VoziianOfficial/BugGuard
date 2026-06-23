@@ -80,6 +80,7 @@
 }
 
 .legal-sidebar {
+    position: -webkit-sticky;
     position: sticky;
     top: 118px;
     padding: 24px;
@@ -436,36 +437,6 @@
 
 
 
-/* Legal sidebar sticky real fix */
-.legal-page,
-.legal-layout {
-    overflow: visible;
-}
-
-@media (min-width: 981px) {
-    .legal-layout {
-        align-items: start;
-    }
-
-    .legal-sidebar {
-        position: sticky !important;
-        top: 120px;
-        align-self: start;
-        height: fit-content;
-        max-height: calc(100vh - 140px);
-        overflow-y: auto;
-        z-index: 30;
-    }
-}
-
-@media (max-width: 980px) {
-    .legal-sidebar {
-        position: static !important;
-        max-height: none;
-        overflow: visible;
-    }
-}
-
 /* FINAL LEGAL PAGE FIXES */
 
 /* Legal contact card — fix shifted inner text */
@@ -542,34 +513,22 @@
 }
 
 
-/* Legal sidebar sticky */
+/* Final desktop sticky behavior for legal sidebar */
 .legal-page,
 .legal-layout {
     overflow: visible;
 }
 
-@media (min-width: 981px) {
-    .legal-layout {
-        align-items: start;
-    }
-
-    .legal-sidebar {
-        position: sticky !important;
-        top: 120px;
-        align-self: start;
-        height: fit-content;
-        max-height: calc(100vh - 140px);
-        overflow-y: auto;
-        z-index: 30;
-    }
+.legal-layout {
+    align-items: start;
 }
 
-@media (max-width: 980px) {
-    .legal-sidebar {
-        position: static !important;
-        max-height: none;
-        overflow: visible;
-    }
+.legal-sidebar {
+    position: -webkit-sticky !important;
+    position: sticky !important;
+    top: calc(var(--header-height) + 24px);
+    align-self: start;
+    z-index: 30;
 }
 
 @media (max-width: 720px) {
