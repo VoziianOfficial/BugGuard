@@ -553,6 +553,37 @@
         }
     };
 
+    function initReasonSwitcher() {
+        const switchers = document.querySelectorAll('[data-switcher]');
+
+        switchers.forEach((switcher) => {
+            const buttons = switcher.querySelectorAll('[data-switcher-button]');
+            const panelTitle = switcher.querySelector('[data-switcher-title]:not([data-switcher-button])');
+            const panelText = switcher.querySelector('[data-switcher-text]:not([data-switcher-button])');
+            const panel = switcher.querySelector('.reason-panel');
+
+            if (!buttons.length || !panelTitle || !panelText || !panel) return;
+
+            buttons.forEach((button) => {
+                button.addEventListener('click', () => {
+                    buttons.forEach((item) => item.classList.remove('is-active'));
+                    button.classList.add('is-active');
+
+                    const newTitle = button.dataset.switcherTitle;
+                    const newText = button.dataset.switcherText;
+
+                    panel.classList.add('is-transitioning');
+
+                    window.setTimeout(() => {
+                        panelTitle.textContent = newTitle;
+                        panelText.textContent = newText;
+                        panel.classList.remove('is-transitioning');
+                    }, 180);
+                });
+            });
+        });
+    }
+
     const init = () => {
         initConfigInjection();
         initActiveLinks();
@@ -565,6 +596,7 @@
         initContactForm();
         initHeaderScrollState();
         initLibraries();
+        initReasonSwitcher();
 
         window.addEventListener('load', () => {
             if (window.AOS) {

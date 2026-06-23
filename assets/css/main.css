@@ -4055,3 +4055,8 @@ button {
     text-align: left;
     line-height: 1.25;
 }
+
+.reason-button::after {
+    left: 44px;
+}
+
