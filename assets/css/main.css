@@ -4015,3 +4015,15 @@ button {
         min-height: 340px;
     }
 }
+
+.about-mission__media {
+    width: calc(100% + 86px);
+    margin-left: -86px;
+}
+
+@media (max-width: 1080px) {
+    .about-mission__media {
+        width: 100%;
+        margin-left: 0;
+    }
+}
