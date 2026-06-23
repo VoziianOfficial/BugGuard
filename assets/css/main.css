@@ -4070,3 +4070,152 @@ button {
     max-width: 980px;
     margin-inline: auto;
 }
+
+@media (max-width: 720px) {
+    .responsible-info .section-heading h2 br {
+        display: none;
+    }
+}
+
+/* About request context background photo section */
+.request-context {
+    position: relative;
+    min-height: 460px;
+    display: flex;
+    align-items: center;
+    color: var(--color-white);
+    background-image: url("../images/about/request-context-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.request-context__overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.52);
+    pointer-events: none;
+}
+
+.request-context__inner {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(280px, 0.52fr);
+    gap: clamp(30px, 6vw, 82px);
+    align-items: center;
+    padding-block: clamp(68px, 8vw, 110px);
+}
+
+.request-context__content {
+    max-width: 760px;
+}
+
+.request-context__content h2 {
+    margin: 0;
+    max-width: 780px;
+    font-size: clamp(2rem, 4.4vw, 4.45rem);
+    font-weight: 780;
+    line-height: 1;
+    letter-spacing: -0.045em;
+}
+
+.request-context__content p:not(.section-kicker) {
+    max-width: 670px;
+    margin: 22px 0 0;
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 1.03rem;
+    line-height: 1.75;
+}
+
+.request-context__points {
+    display: grid;
+    gap: 12px;
+}
+
+.request-context__points article {
+    position: relative;
+    display: grid;
+    grid-template-columns: 42px 1fr;
+    gap: 14px;
+    align-items: center;
+    min-height: 72px;
+    padding: 18px 20px;
+    background: rgba(5, 7, 6, 0.48);
+    border: 1px solid rgba(167, 245, 106, 0.22);
+    border-radius: 22px;
+    backdrop-filter: blur(12px);
+    overflow: hidden;
+    transition:
+        transform 0.28s ease,
+        border-color 0.28s ease,
+        background-color 0.28s ease;
+}
+
+.request-context__points article::after {
+    content: "";
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    bottom: 12px;
+    height: 2px;
+    background: var(--color-accent);
+    border-radius: 999px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.28s ease;
+}
+
+.request-context__points article:hover {
+    transform: translateY(-4px);
+    background: rgba(5, 7, 6, 0.62);
+    border-color: rgba(167, 245, 106, 0.48);
+}
+
+.request-context__points article:hover::after {
+    transform: scaleX(1);
+}
+
+.request-context__points svg {
+    width: 34px;
+    height: 34px;
+    color: var(--color-accent);
+    stroke-width: 1.7;
+}
+
+.request-context__points span {
+    color: var(--color-white);
+    font-weight: 850;
+    line-height: 1.25;
+}
+
+@media (max-width: 900px) {
+    .request-context__inner {
+        grid-template-columns: 1fr;
+    }
+
+    .request-context__points {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 680px) {
+    .request-context {
+        min-height: auto;
+    }
+
+    .request-context__inner {
+        padding-block: 64px;
+    }
+
+    .request-context__points {
+        grid-template-columns: 1fr;
+    }
+
+    .request-context__content h2 {
+        font-size: clamp(1.9rem, 9vw, 3.15rem);
+        line-height: 1.04;
+    }
+}
