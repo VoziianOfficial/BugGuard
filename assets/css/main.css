@@ -3512,3 +3512,50 @@ button {
 .legal-hero {
     margin-top: 0;
 }
+
+/* ==================================================
+   TYPOGRAPHY FIX — softer readable headings
+================================================== */
+
+.hero h1,
+.legal-hero h1 {
+    font-weight: 820;
+    line-height: 0.98;
+    letter-spacing: -0.045em;
+}
+
+.section-heading h2,
+.platform-intro__content h2,
+.process-section__content h2,
+.final-cta h2,
+.about-mission__content h2,
+.about-helps__content h2,
+.reason-panel h3,
+.request-details__content h2,
+.contact-form h2,
+.pest-guide__intro h2,
+.compare-options__content h2,
+.service-signs__content h2,
+.service-faq__intro h2,
+.legal-card h2 {
+    font-weight: 820;
+    line-height: 1.02;
+    letter-spacing: -0.045em;
+}
+
+.popular-card h3,
+.contact-category-card h2,
+.problem-card h3,
+.related-card h2,
+.related-card h3,
+.info-card h3,
+.safety-item h3,
+.faq-slide h3,
+.service-accordion__button span,
+.selector-card span,
+.guide-row strong,
+.accordion__button span {
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.08;
+}
