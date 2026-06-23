@@ -53,7 +53,7 @@ window.SiteConfig = {
             title: 'Spider Control',
             shortTitle: 'Spiders',
             file: 'spider-control.html',
-            icon: 'spider',
+            icon: 'bug',
             image: 'assets/images/home/spider-issue.jpg',
             heroImage: 'assets/images/services/spider-control-hero.jpg',
             description: 'Find provider options for spider activity, webs, garages, basements, and outdoor edges.'
